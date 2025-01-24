@@ -26,7 +26,7 @@ describe('Testes de Login - E2E', () => {
         LoginPage.verifyErrorMessage('Password é obrigatório')
     });
 
-    it.only('Deve realizar login ignorando espaços extras no email', () => {
+    it('Deve realizar login ignorando espaços extras no email', () => {
         LoginPage.fillEmail(' usuario@teste.com ');
         LoginPage.fillPassword('123456');
         LoginPage.submit();

@@ -11,17 +11,35 @@ on:
 jobs:
   cypress-tests:
     runs-on: ubuntu-latest
+
     steps:
+      # Passo 1: Checkout do código
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Passo 2: Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      # Passo 3: Instalar as dependências
       - name: Install Dependencies
         run: npm install
 
+      # Passo 4: Instalar o binário do Cypress
+      - name: Install Cypress Binary
+        run: npx cypress install
+
+      # Passo 5: Rodar os testes do Cypress
       - name: Run Cypress Tests
         run: npx cypress run
+
+      # Passo 6 (opcional): Cache do Cypress Binary para execuções futuras
+      - name: Cache Cypress Binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-

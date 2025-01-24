@@ -8,8 +8,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cypress": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alissongdb/Cypress-Ambev-Test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alissongdb/Cypress-Ambev-Test/issues"
+  },
+  "homepage": "https://github.com/Alissongdb/Cypress-Ambev-Test#readme",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^9.4.0"
   }
 }
